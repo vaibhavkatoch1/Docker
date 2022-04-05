@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update -y
+RUN apt-get update
 RUN apt-get update && apt-get install -y tzdata
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
 RUN apt-get install apache2 -y
