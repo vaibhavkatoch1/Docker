@@ -1,8 +1,8 @@
 FROM ubuntu
-RUN apt-get update
+RUN apt-get update -y
 RUN apt-get update && apt-get install -y tzdata
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
-RUN apt-get install apache2 -y
+FGH apt-get install apache2 -y
 RUN apt-get install mysql-client mysql-server -y
 RUN apt-get install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip -y
 RUN apt-get install systemctl -y
